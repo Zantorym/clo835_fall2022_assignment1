@@ -38,8 +38,8 @@ jobs:
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY_WEB:$IMAGE_TAG -f Dockerfile_mysql .
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY_DB:$IMAGE_TAG .
         # Unit test
-        docker run -d -p 80:8080 --name nodeapp $ECR_REGISTRY/$ECR_REPOSITORY_WEB:$IMAGE_TAG
-        docker run -d -p 80:8080 --name nodeapp $ECR_REGISTRY/$ECR_REPOSITORY_DB:$IMAGE_TAG
+        docker run -d -p 80:8080 --name webappcontainer $ECR_REGISTRY/$ECR_REPOSITORY_WEB:$IMAGE_TAG
+        docker run -d -p 80:8080 --name mysqldbcontainer $ECR_REGISTRY/$ECR_REPOSITORY_DB:$IMAGE_TAG
         docker ps
         echo "Pause for 10 seconds to let container start"
         sleep 10
