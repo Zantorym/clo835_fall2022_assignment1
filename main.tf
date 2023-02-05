@@ -18,6 +18,7 @@ data "aws_vpc" "default" {
 resource "aws_subnet" "public_subnet" {
   vpc_id     = data.aws_vpc.default.id
   cidr_block = "172.31.96.0/20"
+  map_public_ip_on_launch = true
 
   tags = {
     Name = "public-subnet"
@@ -25,12 +26,12 @@ resource "aws_subnet" "public_subnet" {
 }
 
 resource "aws_instance" "webapp_server" {
-  ami                  = data.aws_ami.latest_amazon_linux.id
-  instance_type        = "t2.micro"
-  subnet_id            = aws_subnet.public_subnet.id
-  iam_instance_profile = "LabInstanceProfile"
-  security_groups      = [aws_security_group.webapp_sg.id]
-  key_name             = "clo835_a1.pem"
+  ami                     = data.aws_ami.latest_amazon_linux.id
+  instance_type           = "t2.micro"
+  subnet_id               = aws_subnet.public_subnet.id
+  iam_instance_profile    = "LabInstanceProfile"
+  security_groups         = [aws_security_group.webapp_sg.id]
+  key_name                = "clo835_a1"
 
   tags = {
     Name = "webapp-server"
