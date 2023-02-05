@@ -1,3 +1,4 @@
 .*
 !/.gitignore
 terraform.*
+clo835_a1.pem
