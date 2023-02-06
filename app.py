@@ -126,7 +126,7 @@ if __name__ == '__main__':
         print("No Command line argument. Color from environment variable =" + COLOR_FROM_ENV)
         COLOR = COLOR_FROM_ENV
     else:
-        print("No command line argument or environment variable. Picking a Random Color =" + COLOR)
+        print("No command line argument or environment variable. Picking a Random Colorrr =" + COLOR)
 
     # Check if input color is a supported one
     if COLOR not in color_codes:
