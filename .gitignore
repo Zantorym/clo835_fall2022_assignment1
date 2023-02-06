@@ -1,4 +1,4 @@
-.*
-!/.gitignore
-terraform.*
+Terraform Code/.*
+Terraform Code/terraform.*
 clo835_a1.pem
+!/.gitignore
