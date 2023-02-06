@@ -74,7 +74,7 @@ def AddEmp():
     finally:
         cursor.close()
 
-    print("all modification done.")
+    print("all modification done...")
     return render_template('addempoutput.html', name=emp_name, color=color_codes[COLOR])
 
 @app.route("/getemp", methods=['GET', 'POST'])
